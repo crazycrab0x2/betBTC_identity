@@ -16,8 +16,10 @@ const port = process.env.PORT || 3000;
 expressApp.use(express.static('static'));
 expressApp.use(express.json());
 
-expressApp.get("/", (req, res) => {
-  res.status(200).json(precess.env.SOCIALFI_AGENT_MNEMONIC);
+expressApp.post("/", (req, res) => {
+  const { address } = req.body;
+  const identity = getUserIdentity(address);
+  res.status(200).json(identity.getPrincipal().toString());
 });
 
 
