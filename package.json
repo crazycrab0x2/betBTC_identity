@@ -1,0 +1,44 @@
+{
+  "name": "betbtc",
+  "version": "1.0.0",
+  "description": "Prediction market on bitcoin.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "author": "CrazyCrab",
+  "license": "MIT",
+  "dependencies": {
+    "@dfinity/agent": "^2.0.0",
+    "@dfinity/identity": "^2.0.0",
+    "@dfinity/identity-secp256k1": "^2.0.0",
+    "@dfinity/principal": "^2.0.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "axios": "^1.7.3",
+    "bip39": "^3.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "hdkey": "^2.1.0",
+    "path": "^0.12.7",
+    "telegraf": "^4.16.3",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
