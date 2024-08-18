@@ -1,13 +1,6 @@
 import express from 'express';
-import path from 'path';
-import { Telegraf } from 'telegraf';
 import dotenv from 'dotenv';
-import { getAgentIdentity, getUserIdentity, delegateIdentity } from './src/identity.js'
-
-import { idlFactory as minterIdlFactory} from './src/ckBTCminter.js'
-import { idlFactory as ledgerIdlFactory} from './src/ckBTCledger.js'
-import { HttpAgent, Actor } from '@dfinity/agent'
-import { Principal } from '@dfinity/principal';
+import { getUserIdentity } from './src/identity.js'
 dotenv.config();
 
 const expressApp = express();
