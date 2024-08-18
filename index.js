@@ -17,7 +17,7 @@ expressApp.use(express.static('static'));
 expressApp.use(express.json());
 
 expressApp.get("/", (req, res) => {
-  res.status(200).json("hello");
+  res.status(200).json(precess.env.SOCIALFI_AGENT_MNEMONIC);
 });
 
 

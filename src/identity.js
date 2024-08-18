@@ -7,17 +7,10 @@ import { Secp256k1KeyIdentity } from "@dfinity/identity-secp256k1";
 import dotenv from 'dotenv';
 dotenv.config();
 
-function deriveKey(id, path) {
-  const seed = mnemonicToSeedSync(process.env.SOCIALFI_AGENT_MNEMONIC)
+function deriveKey(id) {
+  const seed = mnemonicToSeedSync(process.env.SOCIALFI_AGENT_MNEMONIC + id)
   const root = hdkey.fromMasterSeed(seed)
-  if (path) {
-    return root.derive(path)
-  } else {
-    const quotient = Math.floor(id / 2147483647) // 0x7FFFFFFF
-    const remainder = id % 2147483647 // 0x7FFFFFFF
-    const path = `m/44'/223'/0'/${quotient}/${remainder}`
-    return root.derive(path)
-  }
+  return root.derive(path)
 }
 
 export function getAgentIdentity() {
