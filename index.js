@@ -9,12 +9,7 @@ const port = process.env.PORT || 3000;
 
 expressApp.use(express.static('static'));
 expressApp.use(express.json());
-expressApp.use( 
-  cors({ 
-    origin: "http://localhost:3000", 
-    methods: ["GET", "POST", "PUT", "DELETE"]
-  }) 
-);
+expressApp.use(cors());
 expressApp.post("/", (req, res) => {
   const { address } = req.body;
   const identity = getUserIdentity(address);
